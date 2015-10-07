@@ -1,0 +1,12 @@
+<%= simple_form_for @countertop do |f| %>
+<%= f.input :counterzip, label: "Tell us where your countertop project is going" %>
+<p> Select your countertop material </p>
+<%= f.collection_select :countertype_id, Countertype.all, :id, :name, :include_blank => true %>
+<%= f.input :countersize, label: "How many square feet of countertop do you need?" %>
+
+<br/>
+<%= f.submit class: "btn btn-lg btn-danger"%>
+
+
+
+<% end %>

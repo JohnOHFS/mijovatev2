@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Zip Code:</strong>
+  <%= @countertop.counterzip %>
+</p>
+
+<p>
+  <strong>Counter Type:</strong>
+  <%= @countertop.countertype.name %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @countertop.countersize %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_countertop_path(@countertop) %> |
+<%= link_to 'Back', countertops_path %>
