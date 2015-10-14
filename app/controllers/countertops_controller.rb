@@ -7,6 +7,8 @@ class CountertopsController < ApplicationController
   def index
     @countertops = Countertop.all
     @countertops = Countertop.includes(:countertype).all
+    @countertops = Countertop.includes(:granitecolor).all
+    @granitecolors = Granitecolor.all 
     
   end
 
@@ -15,12 +17,14 @@ class CountertopsController < ApplicationController
   def show
     @countertops = Countertop.all
     @countertops = Countertop.includes(:countertype).all
+    @countertops = Countertop.includes(:granitecolor).all
    
   end
 
   # GET /countertops/new
   def new
     @countertop = Countertop.new
+    @granitecolors = Granitecolor.all 
   end
 
   # GET /countertops/1/edit
@@ -31,6 +35,7 @@ class CountertopsController < ApplicationController
   # POST /countertops.json
   def create
     @countertop = Countertop.new(countertop_params)
+    @granitecolors = Granitecolor.all 
 
 
     respond_to do |format|
@@ -76,7 +81,7 @@ class CountertopsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def countertop_params
-      params.require(:countertop).permit(:counterzip, :countersize, :countertype_id)
+      params.require(:countertop).permit(:counterzip, :countersize, :countertype_id, :granitecolor_id)
     end
 end
 

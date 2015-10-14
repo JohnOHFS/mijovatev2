@@ -99,8 +99,13 @@ body {
 }
 
 .input-sm {
-  color: #000000;
+  color: #666;
 }
+
+option {
+  color: #666;
+}
+
 
 @media (min-width: 768px) {
   .masthead-brand {

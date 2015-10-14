@@ -15,6 +15,11 @@
   <%= @countertop.countersize %>
 </p>
 
+</p>
+  <strong>Counter Color:</strong>
+  <%= @countertop.granitecolor.name if @countertop.granitecolor !=nil %>
+</p>
+
 
 
 <%= link_to 'Edit', edit_countertop_path(@countertop) %> |

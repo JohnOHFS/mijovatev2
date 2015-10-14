@@ -10,6 +10,7 @@
       <th>Zip Code</th>
       <th>Countertop Type</th>
       <th>Size</th>
+      <th>Color</th>
      
       <th colspan="3"></th>
     </tr>
@@ -20,8 +21,9 @@
     <% @countertops.each do |countertop| %>
       <tr>
         <td><%= countertop.counterzip %></td>
-    	  <td><%= countertop.countertype.name %></td>
+    	  <td><%= countertop.countertype.name if countertop.countertype !=nil %></td>
         <td><%= countertop.countersize %></td>
+        <td><%= countertop.granitecolor.name if countertop.granitecolor !=nil %></td>
        
         <td><%= link_to 'Show', countertop %></td>
         <td><%= link_to 'Edit', edit_countertop_path(countertop) %></td>
