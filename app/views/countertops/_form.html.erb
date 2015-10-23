@@ -16,7 +16,7 @@
     <%= f.text_field :counterzip, class: "form-control", placeholder: "Enter your Zip Code" %>
 </div>
 
-<div class="form-group" align="left">
+<div id="countertype" class="form-group" align="left">
     <%= f.label :countertype_id, "What type of countertop material do you need?" %></br>
     <%= f.collection_select :countertype_id, Countertype.all, :id, :name, { :prompt => "Select Your Material" }, class: "input-sm"  %>
 </div>
@@ -26,10 +26,16 @@
     <%= f.text_field :countersize, class: "form-control", placeholder: "Enter the amount of countertop you need in square feet" %>
 </div>
 
-<div align="left" class="form-group">
+<div id="granitecolor" align="left" class="form-group">
     <%= f.label :granitecolor_id, "What granite color pattern do you want?" %></br>
-    <%= f.select :granitecolor_id, options_for_select(@granitecolors.map{ |g| [g.name, g.id, {'data-img-src'=>g.url}] }) %>
+    <%= f.select :granitecolor_id, options_for_select(@granitecolors.map{ |g| [g.name, g.id, {'data-img-src'=>g.url}]}) %>
 </div>
+
+<div id="marblecolor" align="left" class="form-group">
+    <%= f.label :marblecolor_id, "What marble color pattern do you want?" %></br>
+    <%= f.select :marblecolor_id, options_for_select(@marblecolors.map{ |m| [m.name, m.id, {'data-img-src'=>m.url}] }) %>
+</div>
+
 
 
 

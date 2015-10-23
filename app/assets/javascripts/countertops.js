@@ -1,6 +1,5 @@
 $(document).ready(function(){ 
-$("select:not(#countertop_countertype_id)").imagepicker({
-      hide_select:  true, 
+$("select:not(#countertop_countertype_id)").val('0').imagepicker({
       show_label:   true,
       clicked:function(){
 
@@ -8,4 +7,6 @@ $("select:not(#countertop_countertype_id)").imagepicker({
 
       }
     });
+	
  });    
+

@@ -24,6 +24,7 @@
     	  <td><%= countertop.countertype.name if countertop.countertype !=nil %></td>
         <td><%= countertop.countersize %></td>
         <td><%= countertop.granitecolor.name if countertop.granitecolor !=nil %></td>
+        <td><%= countertop.marblecolor.name if countertop.marblecolor !=nil %></td>
        
         <td><%= link_to 'Show', countertop %></td>
         <td><%= link_to 'Edit', edit_countertop_path(countertop) %></td>

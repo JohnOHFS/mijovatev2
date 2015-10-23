@@ -16,10 +16,10 @@
 </p>
 
 </p>
-  <strong>Counter Color:</strong>
-  <%= @countertop.granitecolor.name if @countertop.granitecolor !=nil %>
+  <strong>Countertop Color:</strong>
+  <%= @countertop.granitecolor.name if @countertop.granitecolor !=nil %>  
+  <%= @countertop.marblecolor.name if @countertop.marblecolor !=nil%>
 </p>
-
 
 
 <%= link_to 'Edit', edit_countertop_path(@countertop) %> |
