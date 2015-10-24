@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Index of All Granite Colors</h1>
+
+<table>
+  <thead>
+    <tr>
+    
+      <th>Name</th>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @granitecolors.each do |granitecolor| %>
+      <tr>
+        <td><%= granitecolor.name %></td>
+        <th colspan="3"></th>
+    	<td><%= granitecolor.url %></td>
+    
+        <td><%= link_to 'Show', granitecolor %></td>
+        <td><%= link_to 'Edit', edit_granitecolor_path(granitecolor) %></td>
+        <td><%= link_to 'Destroy', granitecolor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Granitecolor', new_granitecolor_path %>
+
