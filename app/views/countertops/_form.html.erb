@@ -28,7 +28,9 @@
 
 <div id="granitecolor" align="left" class="form-group" style="display:none;">
     <%= f.label :granitecolor_id, "What granite color pattern do you want?" %></br>
+    <div class="imagebox" style="height:450px; width:80%; overflow:auto;">
     <%= f.select :granitecolor_id, options_for_select(@granitecolors.map{ |g| [g.name, g.id, {'data-img-src'=>g.url}]}) %>
+  </div>
 </div>
 
 <div id="marblecolor" align="left" class="form-group" style="display:none;">
