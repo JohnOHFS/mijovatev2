@@ -26,12 +26,12 @@
     <%= f.text_field :countersize, class: "form-control", placeholder: "Enter the amount of countertop you need in square feet" %>
 </div>
 
-<div id="granitecolor" align="left" class="form-group">
+<div id="granitecolor" align="left" class="form-group" style="display:none;">
     <%= f.label :granitecolor_id, "What granite color pattern do you want?" %></br>
     <%= f.select :granitecolor_id, options_for_select(@granitecolors.map{ |g| [g.name, g.id, {'data-img-src'=>g.url}]}) %>
 </div>
 
-<div id="marblecolor" align="left" class="form-group">
+<div id="marblecolor" align="left" class="form-group" style="display:none;">
     <%= f.label :marblecolor_id, "What marble color pattern do you want?" %></br>
     <%= f.select :marblecolor_id, options_for_select(@marblecolors.map{ |m| [m.name, m.id, {'data-img-src'=>m.url}] }) %>
 </div>

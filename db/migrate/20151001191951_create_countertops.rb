@@ -6,6 +6,6 @@ class CreateCountertops < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :countertops, :countertypes, column: :Countertype_Id
+    
   end
 end

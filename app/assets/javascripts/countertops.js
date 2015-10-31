@@ -12,8 +12,7 @@ $("select:not(#countertop_countertype_id)").val('0').imagepicker({
 
 $(document).ready(function() {
 
-    $('#granitecolor').hide();
-    $('#marblecolor').hide();
+
 
     $('#countertype').change(function () {
         if ($('#countertype option:selected').text() == "Granite"){
@@ -27,6 +26,11 @@ $(document).ready(function() {
 
         }
         else if ($('#countertype option:selected').text() == "Soapstone"){
+            $('#granitecolor').hide();
+            $('#marblecolor').hide();
+
+        }
+        else if ($('#countertype option:selected').text() == "Select Your Material"){
             $('#granitecolor').hide();
             $('#marblecolor').hide();
 
