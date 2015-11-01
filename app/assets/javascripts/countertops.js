@@ -52,3 +52,20 @@ $(document).ready(function() {
         }
     }); 
 });
+
+$(document).ready(function() {
+
+
+
+    $('#countertype').change(function () {
+        if ($('#countertype option:selected').val()){
+            $('#layout').show();
+           
+        }
+        else if ($('#countertype option:selected').text() == "Select Your Material"){
+            $('#layout').hide();
+
+
+        }
+    }); 
+});

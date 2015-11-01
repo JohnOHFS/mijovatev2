@@ -26,6 +26,13 @@
     <%= f.text_field :countersize, class: "form-control", placeholder: "Enter the amount of countertop you need in square feet" %>
 </div>
 
+<div id="layout" align="left" class="form-group" style="display:none;">
+    <%= f.label :layout_id, "What is your countertop layout?" %></br>
+    <div class="imagebox">
+    <%= f.select :layout_id, options_for_select(@layouts.map{ |l| [l.name, l.id, {'data-img-src'=>l.url}]}) %>
+  </div>
+</div>
+
 <div id="granitecolor" align="left" class="form-group" style="display:none;">
     <%= f.label :granitecolor_id, "What granite color pattern do you want?" %></br>
     <div class="imagebox" style="height:450px; width:80%; overflow:auto;">

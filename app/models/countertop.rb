@@ -4,4 +4,5 @@ class Countertop < ActiveRecord::Base
 	belongs_to :marblecolor
 	belongs_to :soapstonecolor
 	belongs_to :quartzcolor
+	belongs_to :layout
 end
