@@ -11,6 +11,8 @@ class CountertopsController < ApplicationController
     @countertops = Countertop.includes(:marblecolor).all
     @granitecolors = Granitecolor.all 
     @marblecolors = Marblecolor.all 
+    @soapstonecolors = Soapstonecolor.all 
+    @quartzcolors = Quartzcolor.all 
     
   end
 
@@ -21,6 +23,8 @@ class CountertopsController < ApplicationController
     @countertops = Countertop.includes(:countertype).all
     @countertops = Countertop.includes(:granitecolor).all
     @countertops = Countertop.includes(:marblecolor).all
+    @countertops = Countertop.includes(:soapstonecolor).all
+    @countertops = Countertop.includes(:quartzcolor).all
    
   end
 
@@ -29,6 +33,8 @@ class CountertopsController < ApplicationController
     @countertop = Countertop.new
     @granitecolors = Granitecolor.all 
     @marblecolors = Marblecolor.all
+    @soapstonecolors = Soapstonecolor.all
+    @quartzcolors = Quartzcolor.all 
   end
 
   # GET /countertops/1/edit
@@ -39,6 +45,8 @@ class CountertopsController < ApplicationController
     @countertops = Countertop.includes(:marblecolor).all
     @granitecolors = Granitecolor.all 
     @marblecolors = Marblecolor.all 
+    @soapstonecolors = Soapstonecolor.all
+    @quartzcolors = Quartzcolor.all 
   end
 
   # POST /countertops
@@ -47,6 +55,8 @@ class CountertopsController < ApplicationController
     @countertop = Countertop.new(countertop_params)
     @granitecolors = Granitecolor.all 
     @marblecolors = Marblecolor.all
+    @soapstonecolors = Soapstonecolor.all
+    @quartzcolors = Quartzcolor.all 
     
 
 
@@ -93,7 +103,8 @@ class CountertopsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def countertop_params
-      params.require(:countertop).permit(:counterzip, :countersize, :countertype_id, :granitecolor_id, :marblecolor_id)
+      params.require(:countertop).permit(:counterzip, :countersize, :countertype_id, :granitecolor_id, 
+        :marblecolor_id, :soapstonecolor_id, :quartzcolor)
     end
 end
 

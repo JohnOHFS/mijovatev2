@@ -11,16 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151017013255) do
+ActiveRecord::Schema.define(version: 20151101201049) do
 
   create_table "countertops", force: :cascade do |t|
     t.string   "counterzip"
     t.string   "countersize"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.integer  "countertype_id"
     t.integer  "granitecolor_id"
     t.integer  "marblecolor_id"
+    t.integer  "soapstonecolor_id"
+    t.integer  "quartzcolor_id"
   end
 
   create_table "countertypes", force: :cascade do |t|
@@ -37,6 +39,20 @@ ActiveRecord::Schema.define(version: 20151017013255) do
   end
 
   create_table "marblecolors", force: :cascade do |t|
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "quartzcolors", force: :cascade do |t|
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "soapstonecolors", force: :cascade do |t|
     t.string   "name"
     t.string   "url"
     t.datetime "created_at", null: false

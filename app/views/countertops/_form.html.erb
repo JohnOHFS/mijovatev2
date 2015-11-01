@@ -38,8 +38,15 @@
     <%= f.select :marblecolor_id, options_for_select(@marblecolors.map{ |m| [m.name, m.id, {'data-img-src'=>m.url}] }) %>
 </div>
 
+<div id="soapstonecolor" align="left" class="form-group" style="display:none;">
+    <%= f.label :soapstonecolor_id, "What soapstone color pattern do you want?" %></br>
+    <%= f.select :soapstonecolor_id, options_for_select(@soapstonecolors.map{ |s| [s.name, s.id, {'data-img-src'=>s.url}] }) %>
+</div>
 
-
+<div id="quartzcolor" align="left" class="form-group" style="display:none;">
+    <%= f.label :quartzcolor_id, "What quartz color pattern do you want?" %></br>
+    <%= f.select :quartzcolor_id, options_for_select(@quartzcolors.map{ |q| [q.name, q.id, {'data-img-src'=>q.url}] }) %>
+</div>
 
  <div class="form-group">
     <%= f.submit class: "btn btn-primary btn-lg" %>
