@@ -1,5 +1,6 @@
 $(document).ready(function(){ 
-$("select:not(#countertop_countertype_id)").val('0').imagepicker({
+
+$("select:not(#countertop_countertype_id)").val('').imagepicker({
       show_label:   true,
       clicked:function(){
 
@@ -11,45 +12,38 @@ $("select:not(#countertop_countertype_id)").val('0').imagepicker({
  });    
 
 $(document).ready(function() {
-
-
-
     $('#countertype').change(function () {
         if ($('#countertype option:selected').text() == "Granite"){
             $('#granitecolor').show();
-             $('#marblecolor').hide();
+             $('#marblecolor').val(['']).hide();
              $('#soapstonecolor').hide();
-             $('#quartzcolor').hide();
-           
+             $('#quartzcolor').hide();           
         }
         else if ($('#countertype option:selected').text() == "Marble"){
             $('#marblecolor').show();
              $('#soapstonecolor').hide();
              $('#granitecolor').hide();
              $('#quartzcolor').hide();
-
         }
         else if ($('#countertype option:selected').text() == "Soapstone"){
             $('#soapstonecolor').show();
              $('#marblecolor').hide();
              $('#granitecolor').hide();
              $('#quartzcolor').hide();
-
         }
         else if ($('#countertype option:selected').text() == "Quartz"){
             $('#soapstonecolor').hide();
              $('#marblecolor').hide();
              $('#granitecolor').hide();
              $('#quartzcolor').show();
-
         }
         else if ($('#countertype option:selected').text() == "Select Your Material"){
             $('#granitecolor').hide();
             $('#marblecolor').hide();
             $('#soapstonecolor').hide();
             $('#quartzcolor').hide();
-
         }
+
     }); 
 });
 
@@ -69,3 +63,5 @@ $(document).ready(function() {
         }
     }); 
 });
+
+

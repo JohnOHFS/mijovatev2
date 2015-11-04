@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151101221950) do
+ActiveRecord::Schema.define(version: 20151104021021) do
 
   create_table "countertops", force: :cascade do |t|
     t.string   "counterzip"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20151101221950) do
     t.integer  "soapstonecolor_id"
     t.integer  "quartzcolor_id"
     t.integer  "layout_id"
+    t.text     "countertext"
+    t.string   "countertime"
   end
 
   create_table "countertypes", force: :cascade do |t|

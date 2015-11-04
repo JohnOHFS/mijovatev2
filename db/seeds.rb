@@ -168,3 +168,9 @@ Marblecolor.create( name: 'Tundra Gray', url: 'https://s3.amazonaws.com/mijovate
 Marblecolor.create( name: 'Volakas', url: 'https://s3.amazonaws.com/mijovate/marble/Volakas-200x200.jpg')
 Marblecolor.create( name: 'White Oak', url: 'https://s3.amazonaws.com/mijovate/marble/White-Oak1-200x200.jpg')
 
+Soapstonecolor.create( name: 'Gray Soapstone', url: 'https://s3.amazonaws.com/mijovate/soapstone/Gray+SoapStone-200x200.jpg')
+Soapstonecolor.create( name: 'Green Soapstone', url: 'https://s3.amazonaws.com/mijovate/soapstone/Green+SoapStone-200x200.jpg')
+Soapstonecolor.create( name: 'Green Ivy Soapstone', url: 'https://s3.amazonaws.com/mijovate/soapstone/Green+Ivy+SoapStone-200x200.jpg')
+
+
+

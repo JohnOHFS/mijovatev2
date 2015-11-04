@@ -109,7 +109,7 @@ class CountertopsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def countertop_params
       params.require(:countertop).permit(:counterzip, :countersize, :countertype_id, :granitecolor_id, 
-        :marblecolor_id, :soapstonecolor_id, :quartzcolor_id, :layout_id)
+        :marblecolor_id, :soapstonecolor_id, :quartzcolor_id, :layout_id, :countertext, :countertime)
     end
 end
 

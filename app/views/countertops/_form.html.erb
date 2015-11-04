@@ -36,23 +36,47 @@
 <div id="granitecolor" align="left" class="form-group" style="display:none;">
     <%= f.label :granitecolor_id, "What granite color pattern do you want?" %></br>
     <div class="imagebox" style="height:450px; width:80%; overflow:auto;">
-    <%= f.select :granitecolor_id, options_for_select(@granitecolors.map{ |g| [g.name, g.id, {'data-img-src'=>g.url}]}) %>
+      <%= f.select :granitecolor_id, options_for_select(@granitecolors.map{ |g| [g.name, g.id, {'data-img-src'=>g.url}]}) %>
   </div>
 </div>
 
 <div id="marblecolor" align="left" class="form-group" style="display:none;">
     <%= f.label :marblecolor_id, "What marble color pattern do you want?" %></br>
-    <%= f.select :marblecolor_id, options_for_select(@marblecolors.map{ |m| [m.name, m.id, {'data-img-src'=>m.url}] }) %>
+    <div class="imagebox" style="height:450px; width:80%; overflow:auto;">
+     <%= f.select :marblecolor_id, options_for_select(@marblecolors.map{ |m| [m.name, m.id, {'data-img-src'=>m.url}] }) %>
+    </div>
 </div>
 
 <div id="soapstonecolor" align="left" class="form-group" style="display:none;">
     <%= f.label :soapstonecolor_id, "What soapstone color pattern do you want?" %></br>
+  <div class="imagebox" style="height:350px; width:80%; overflow:auto;">
     <%= f.select :soapstonecolor_id, options_for_select(@soapstonecolors.map{ |s| [s.name, s.id, {'data-img-src'=>s.url}] }) %>
+  </div>
 </div>
 
 <div id="quartzcolor" align="left" class="form-group" style="display:none;">
     <%= f.label :quartzcolor_id, "What quartz color pattern do you want?" %></br>
     <%= f.select :quartzcolor_id, options_for_select(@quartzcolors.map{ |q| [q.name, q.id, {'data-img-src'=>q.url}] }) %>
+</div>
+
+<div align="left">
+  <label>How Soon Do You Need your Countertop?</label>
+<div class="radio">
+  <%= f.radio_button :countertime, '1-2 Weeks' %>
+  <label>1-2 Weeks</label></br>
+  <%= f.radio_button :countertime, '2-4 Weeks' %>
+  <label>2-4 Weeks</label></br>
+  <%= f.radio_button :countertime, '4-6 Weeks' %>
+  <label>4-6 Weeks</label></br>
+  <%= f.radio_button :countertime, 'More Than 6 Weeks' %>
+  <label>More Than 6 Weeks</label>
+</div> 
+</div>
+
+
+<div class="form-group" align="left" style="height: 250px;">
+    <%= f.label :countertext, "Tell us more about your project if you think it will help." %> 
+    <%= f.text_field :countertext, class: "form-control", placeholder: "Provide additional info here." %>
 </div>
 
  <div class="form-group">
