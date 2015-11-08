@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   resources :countertops
   resources :granitecolors
   root 'pages#home'
+
+  devise_for :users, controllers: { registrations: "registrations" }
+
+  get 'users/dashboard' => 'users#dashboard'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
