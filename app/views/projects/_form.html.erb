@@ -1,0 +1,94 @@
+<%= form_for(@project) do |f| %>
+
+  	<div class="form-group" align="left">
+	    <%= f.label :name, "Give your Project a Name." %>
+	    <%= f.text_field :name, class: "form-control", placeholder: "Example: My New Kitchen Countertop" %>
+	</div>
+  
+  	<div class="form-group" align="left">
+	    <%= f.label :zipcode, "Tell us where your countertop project is going." %>
+	    <%= f.text_field :zipcode, class: "form-control", placeholder: "Enter your Zip Code" %>
+	</div>
+
+	<div align="left">
+	  <label>How Soon Do You Need your Countertop?</label>
+		<div class="radio">
+		  <%= f.radio_button :timeframe, '1-2 Weeks' %>
+		  <label>1-2 Weeks</label></br>
+		  <%= f.radio_button :timeframe, '2-4 Weeks' %>
+		  <label>2-4 Weeks</label></br>
+		  <%= f.radio_button :timeframe, '4-6 Weeks' %>
+		  <label>4-6 Weeks</label></br>
+		  <%= f.radio_button :timeframe, 'More Than 6 Weeks' %>
+		  <label>More Than 6 Weeks</label>
+		</div> 
+	</div>
+
+	 <div align="left">
+	  <label>Where would you like to receive quotes from?</label>
+		<div class="radio">
+		  <%= f.radio_button :supplier, 'Local Suppliers Only' %>
+		  <label>Local Suppliers Only</label></br>
+		  <%= f.radio_button :supplier, 'Regional Suppliers' %>
+		  <label>Regional Suppliers</label></br>
+		  <%= f.radio_button :supplier, 'National Suppliers' %>
+		  <label>National Suppliers</label></br>
+		</div> 
+	</div>
+
+  <%= f.fields_for :countertops, Countertop.new do |countertops_form| %>
+
+	<div id="countertype" class="form-group" align="left">
+	    <%= countertops_form.label :countertype_id, "What type of countertop material do you need?" %></br>
+	    <%= countertops_form.collection_select :countertype_id, Countertype.all, :id, :name, { :prompt => "Select Your Material" }, class: "input-sm"  %>
+	</div>
+
+	<div class="form-group", align="left">
+	    <%= countertops_form.label :countersize, "How much countertop do you need?" %>
+	    <%= countertops_form.text_field :countersize, class: "form-control", placeholder: "Enter the amount of countertop you need in square feet" %>
+	</div>
+
+	<div id="layout" align="left" class="form-group" style="display:none;">
+	    <%= countertops_form.label :layout_id, "What is your countertop layout?" %></br>
+	    <div class="imagebox">
+	    <%= countertops_form.select :layout_id, options_for_select(@layouts.map{ |l| [l.name, l.id, {'data-img-src'=>l.url}]}) %>
+	  </div>
+	</div>
+
+	<div id="granitecolor" align="left" class="form-group" style="display:none;">
+	    <%= countertops_form.label :granitecolor_id, "What granite color pattern do you want?" %></br>
+	    <div class="imagebox" style="height:450px; width:80%; overflow:auto;">
+	      <%= countertops_form.select :granitecolor_id, options_for_select(@granitecolors.map{ |g| [g.name, g.id, {'data-img-src'=>g.url}]}) %>
+	  </div>
+	</div>
+
+	<div id="marblecolor" align="left" class="form-group" style="display:none;">
+	    <%= countertops_form.label :marblecolor_id, "What marble color pattern do you want?" %></br>
+	    <div class="imagebox" style="height:450px; width:80%; overflow:auto;">
+	     <%= countertops_form.select :marblecolor_id, options_for_select(@marblecolors.map{ |m| [m.name, m.id, {'data-img-src'=>m.url}] }) %>
+	    </div>
+	</div>
+
+	<div id="soapstonecolor" align="left" class="form-group" style="display:none;">
+	    <%= countertops_form.label :soapstonecolor_id, "What soapstone color pattern do you want?" %></br>
+	  <div class="imagebox" style="height:350px; width:80%; overflow:auto;">
+	    <%= countertops_form.select :soapstonecolor_id, options_for_select(@soapstonecolors.map{ |s| [s.name, s.id, {'data-img-src'=>s.url}] }) %>
+	  </div>
+	</div>
+
+	<div id="quartzcolor" align="left" class="form-group" style="display:none;">
+	    <%= countertops_form.label :quartzcolor_id, "What quartz color pattern do you want?" %></br>
+	    <%= countertops_form.select :quartzcolor_id, options_for_select(@quartzcolors.map{ |q| [q.name, q.id, {'data-img-src'=>q.url}] }) %>
+	</div>
+
+	<div class="form-group" align="left" style="height: 250px;">
+	    <%= countertops_form.label :countertext, "Tell us more about your project if you think it will help." %> 
+	    <%= countertops_form.text_area :countertext, cols: 80, rows: 5, class: "form-control", placeholder: "Provide additional info here." %>
+	</div>
+
+    <% end %>
+
+ <div class="form-group">
+    <%= f.submit class: "btn btn-primary btn-lg" %>
+ </div>
+<% end %>

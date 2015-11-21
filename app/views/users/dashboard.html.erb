@@ -1,2 +1,47 @@
-<h1>Welcome to Your Dashboard, <%= current_user.first_name %>. </h1>
-<p>We're going to list all of your projects here and allow you to create and edit new projects.</p>
+<%= render 'layouts/dashboard_header' %>
+	<div class="col-md-12">
+		<h1>Welcome to Your Dashboard, <%= current_user.first_name %>.</h1></br>
+		<p>We're going to list all of your projects here and allow you to create and edit new projects.</p>
+		<button id="main" type="button" class="btn btn-lg btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Start a New Project</button>
+	</div>
+
+	<div class="col-md-12" id="projects" style="display: none;">
+		<button type="button" class="btn btn-lg btn-success"><%= link_to "New Countertop Project", new_project_path %>
+		</button>
+	</div>
+
+	<div class="col-md-12">
+		<h3>Project Control Window</h3>
+		<div class="table-responsive">
+		  <table class="table">
+		  	<tr>
+			    <th>Project Name</th>
+			    <th>Project Status</th>
+			    <th align="right">Action</th>
+		    </tr>
+		     		<% @projects.each do |project| %>
+		    <tr>
+		    	<td align="left"><%= link_to project.name, project %></td>
+		    	<td><%= project.zipcode %></td>
+		    	<td>
+		    		<button class="btn btn-info"><%= link_to 'View', project %></button>
+		    		<button class="btn btn-warning"><%= link_to 'Edit', edit_project_path(project) %></button>
+		    		<button class="btn btn-danger"><%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+
+		    	</td>
+		    </tr>
+		    <% end %>
+		  </table>
+		</div>
+		
+		
+	</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/assets/users.js"></script>
+   </div>
+  </body>
+</html>

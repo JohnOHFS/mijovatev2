@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104153651) do
+ActiveRecord::Schema.define(version: 20151117055100) do
 
   create_table "countertops", force: :cascade do |t|
     t.string   "counterzip"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20151104153651) do
     t.integer  "layout_id"
     t.text     "countertext"
     t.string   "countertime"
+    t.integer  "project_id"
   end
 
   create_table "countertypes", force: :cascade do |t|
@@ -53,6 +54,15 @@ ActiveRecord::Schema.define(version: 20151104153651) do
     t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "zipcode"
+    t.string   "timeframe"
+    t.string   "supplier"
   end
 
   create_table "quartzcolors", force: :cascade do |t|
